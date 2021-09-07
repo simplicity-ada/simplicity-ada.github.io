@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicon-2/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-2/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon-2/favicon-16x16.png">
+    <link rel="manifest" href="./favicon-2/site.webmanifest">
+    <link rel="mask-icon" href="./favicon-2/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="shortcut icon" href="../images/fav_icon.png" type="image/x-icon">
+    <title>Simplicity Ada</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.9.1/css/OverlayScrollbars.min.css'>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <!-- Bulma Version 0.9.0-->
+    <link rel="stylesheet" href="https://unpkg.com/bulma@0.9.0/css/bulma.min.css" />
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <link rel="stylesheet" href="https://unpkg.com/bulma-modal-fx/dist/css/modal-fx.min.css" />
+  </head>
+  <body>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="/">
+          <img src="https://simplicity-ada.github.io/logo-2.png">
+        </a>
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item">
+            Home
+          </a>
+          <a class="navbar-item">
+            Documentation
+          </a>
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+              More
+            </a>
+            <div class="navbar-dropdown">
+              <a class="navbar-item">
+                About
+              </a>
+              <a class="navbar-item">
+                Jobs
+              </a>
+              <a class="navbar-item">
+                Contact
+              </a>
+              <hr class="navbar-divider">
+              <a class="navbar-item">
+                Report an issue
+              </a>
+            </div>
+          </div>
+        </div>
+    </nav>
+    <div class="box cta">
+      <p class="has-text-centered">
+      <span class="tag is-primary">New</span> Stake with [SIM0] get NFTs</p>
+    </div>
+    <section class="container">
+      {%- for group in groups %}
+      <div class="columns features">
+        {%- for nft in group %}
+        <div class="column is-4 modal-button" data-target="modal-image-{{nft['id']}}">
+          <div class="card is-shady">
+            <div class="card-image">
+              <figure class="image">
+              <img src="{{nft['url']}}" alt="{{ nft['name'] }}">
+              </figure>
+            </div>
+            <div class="card-content">
+              <div class="content">
+                <h3>#{{ nft['id'] }}</h3>
+                <p>Token: {{nft['token']}}</p>
+                <p>Distribution: {{nft['distribution']}}</p>
+                <p>pool.pm: <a href="{{nft['pool_pm']}}" target="_blank">{{nft['pool_pm'][:30]}}...</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        {%- endfor %}
+      </div>
+      {%- endfor %}
+    </section>
+    <footer>
+    </footer>
+      {%- for group in groups %}
+        {%- for nft in group %}
+        <div id="modal-image-{{nft['id']}}" class="modal modal-fx-superScaled">
+          <div class="modal-background"></div>
+          <div class="modal-content is-image">
+            <img src="{{nft['url']}}" alt="{{ nft['name'] }}">
+          </div>
+          <button class="modal-close is-large" aria-label="close"></button>
+        </div>
+        {%- endfor %}
+      {%- endfor %}
+      <script src="https://unpkg.com/bulma-modal-fx/dist/js/modal-fx.min.js"></script>
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  </body>
+</html>
