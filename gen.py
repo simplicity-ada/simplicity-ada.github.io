@@ -62,6 +62,12 @@ def process(policy_id: str, token: str, nft: dict) -> dict:
     return nft
 
 
+def add_scarcity(nft: dict, total: int) -> dict:
+    nft["scarcity"] = int(nft["distribution"]) / total
+    nft["scarcity_percentage"] = f"{nft['scarcity'] * 100 :.2f}%"
+    return nft
+
+
 def main():
     with open(PWD / "templates" / "nft.jinja") as t:
         template = env.from_string(t.read())
@@ -72,6 +78,8 @@ def main():
         process(policy_id, token, nft)
         for token, nft in list(list(metadata.values())[0].values())[0].items()
     ]
+    total = sum([int(nft["distribution"]) for nft in nfts])
+    nfts = [add_scarcity(nft, total) for nft in nfts]
     groups = [group for group in chunks(nfts, 3)]
     result = template.render(groups=groups)
     with open(PWD / "index.html", "w") as f:

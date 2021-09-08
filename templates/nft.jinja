@@ -83,9 +83,9 @@
             <div class="card-content">
               <div class="content">
                 <h3>#{{ nft['id'] }}</h3>
-                <p>Token: {{nft['token']}}</p>
+                <p>Token: <a href="{{nft['pool_pm']}}" target="_blank">{{nft['token']}}</a></p>
                 <p>Distribution: {{nft['distribution']}}</p>
-                <p>pool.pm: <a href="{{nft['pool_pm']}}" target="_blank">{{nft['pool_pm'][:30]}}...</a></p>
+                <p>Scarcity: {{nft['scarcity_percentage']}}</p>
               </div>
             </div>
           </div>
