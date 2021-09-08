@@ -3,6 +3,7 @@ import json
 import jinja2
 from pathlib import Path
 import re
+from itertools import groupby
 
 PWD = Path(__file__).absolute().parent
 
@@ -81,7 +82,11 @@ def main():
     ]
     total = sum([int(nft["distribution"]) for nft in nfts])
     nfts = [add_scarcity(nft, total) for nft in nfts]
-    groups = [group for group in chunks(nfts, 3)]
+    nfts = sorted(nfts, key=lambda nft: int(nft["distribution"]))
+    groups = [
+        list(group)
+        for key, group in groupby(nfts, key=lambda nft: int(nft["distribution"]))
+    ]
     result = template.render(groups=groups)
     with open(PWD / "index.html", "w") as f:
         f.write(result)
