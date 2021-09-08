@@ -17,57 +17,130 @@
     <title>Simplicity Ada</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-    <!-- Bulma Version 0.9.0-->
-    <link rel="stylesheet" href="https://unpkg.com/bulma@0.9.0/css/bulma.min.css" />
+    <!-- Bulma Version 0.9.3-->
+    <link rel="stylesheet" href="https://unpkg.com/bulma@0.9.3/css/bulma.min.css" />
     <link rel="stylesheet" type="text/css" href="../style.css">
   </head>
   <body>
-    <nav class="navbar" role="navigation" aria-label="main navigation">
-      <div class="navbar-brand">
-        <a class="navbar-item" href="/">
-          <img src="https://simplicity-ada.github.io/logo-2.png">
-        </a>
-        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-        </a>
-      </div>
-      <div id="navbarBasicExample" class="navbar-menu">
-        <div class="navbar-start">
-          <a class="navbar-item">
-            Home
-          </a>
-          <a class="navbar-item">
-            Documentation
-          </a>
-          <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-link">
-              More
-            </a>
-            <div class="navbar-dropdown">
-              <a class="navbar-item">
-                About
-              </a>
-              <a class="navbar-item">
-                Jobs
-              </a>
-              <a class="navbar-item">
-                Contact
-              </a>
-              <hr class="navbar-divider">
-              <a class="navbar-item">
-                Report an issue
-              </a>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="/">
+                  <img src="logo-2.png"> Simplicity Ada
+                </a>
+                <span class="navbar-burger burger" data-target="navbarMenu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </span>
+            </div>
+            <div id="navbarMenu" class="navbar-menu">
+                <div class="navbar-end">
+                    <a class="bd-navbar-icon navbar-item" href="https://github.com/simplicity-ada" target="_blank">
+                      <span class="icon" style="color: var(--github);">
+                        <i class="fa fa-lg fa-github-alt"></i>
+                      </span>
+                    </a>
+                    <a class="bd-navbar-icon navbar-item" href="https://twitter.com/SimplicityAda" target="_blank">
+                      <span class="icon" style="color: var(--twitter);">
+                        <i class="fa fa-lg fa-twitter"></i>
+                      </span>
+                    </a>
+                    <div class="tabs is-right">
+                        <ul>
+                            <li class="is-active"><a>Home</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <section class="container">
+      <p class="has-text-white">ticker: SIM0</p>
+      <p class="has-text-white">pool-id: 9a659a6c7b867db50f91a93340883babacc8be128a41b28cc64a72ce</p>
+      <table class="table is-bordered is-hoverable is-striped">
+        <thead>
+          <tr>
+            <th>Ada Staked</th>
+            <th colspan="5" style="text-align:center;">Reward / epoch</th>
+          </tr>
+          <tr>
+            <th></th>
+            <th>scarcity: 11.07%</th>
+            <th>scarcity: 5.54%</th>
+            <th>scarcity: 2.21%</th>
+            <th>scarcity: 1.11%</th>
+            <th>scarcity: 0.11%</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>100</td>
+            <td>1</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>1000</td>
+            <td>5</td>
+            <td>1</td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>1,0000</td>
+            <td>5</td>
+            <td>5</td>
+            <td>1</td>
+            <td></td>
+            <td></td>
+          <tr>
+            <td>10,0000</td>
+            <td>5</td>
+            <td>5</td>
+            <td>5</td>
+            <td>1</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>100,0000</td>
+            <td>5</td>
+            <td>5</td>
+            <td>5</td>
+            <td>5</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>1,000,0000</td>
+            <td>100</td>
+            <td>100</td>
+            <td>100</td>
+            <td>50</td>
+            <td>10</td>
+          </tr>
+        </tbody>
+      </table>
+      <h2 class="title is-2 has-text-white">Block Dragon NFT</h2>
+      <div class="columns">
+        <div class="column is-6">
+          <div class="card is-shady">
+            <div class="card-image">
+              <figure class="image">
+                <img src="./nft/collection.png"/>
+              </figure>
+            </div>
+            <div class="card-content">
+              <div class="content">
+                <p>policy-id: <a href="https://pool.pm/addr1q98rpdtjzw687avzkvdj3mpkfwwq2ldc0cycaa0p4cjqeecjql2sgas0029408zrfe6l5yqkh5raj32k453u56vaj7pqudx7rr/d34fcb99ae38822fcb2f8c5a695687d1bebfcd50871ae18f143dd22a" target="_blank">d34fcb99ae38822fcb2f8c5a695687d1bebfcd50871ae18f143dd22a</a></p>
+                <p>total distribution: 5,035</p>
+              </div>
             </div>
           </div>
         </div>
-    </nav>
-    <div class="box cta">
-      <p class="has-text-centered">
-      <span class="tag is-primary">New</span> Stake with [SIM0] get NFTs</p>
-    </div>
-    <section class="container">
+      </div>
       {%- for group in groups %}
       <div class="columns features">
         {%- for nft in group %}
@@ -80,10 +153,10 @@
             </div>
             <div class="card-content">
               <div class="content">
-                <h3>#{{ nft['id'] }}</h3>
-                <p>Token: <a href="{{nft['pool_pm']}}" target="_blank">{{nft['token']}}</a></p>
-                <p>Distribution: {{nft['distribution']}}</p>
-                <p>Scarcity: {{nft['scarcity_percentage']}}</p>
+                <h2>#{{ nft['id'] }}</h2>
+                <p>token: <a href="{{nft['pool_pm']}}" target="_blank">{{nft['token']}}</a></p>
+                <p>distribution: {{nft['distribution']}}</p>
+                <p>scarcity: {{nft['scarcity_percentage']}}</p>
               </div>
             </div>
           </div>
