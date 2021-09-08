@@ -16,12 +16,10 @@
     <link rel="shortcut icon" href="../images/fav_icon.png" type="image/x-icon">
     <title>Simplicity Ada</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.9.1/css/OverlayScrollbars.min.css'>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <!-- Bulma Version 0.9.0-->
     <link rel="stylesheet" href="https://unpkg.com/bulma@0.9.0/css/bulma.min.css" />
     <link rel="stylesheet" type="text/css" href="../style.css">
-    <link rel="stylesheet" href="https://unpkg.com/bulma-modal-fx/dist/css/modal-fx.min.css" />
   </head>
   <body>
     <nav class="navbar" role="navigation" aria-label="main navigation">
@@ -73,7 +71,7 @@
       {%- for group in groups %}
       <div class="columns features">
         {%- for nft in group %}
-        <div class="column is-4 modal-button" data-target="modal-image-{{nft['id']}}">
+        <div class="column is-4">
           <div class="card is-shady">
             <div class="card-image">
               <figure class="image">
@@ -96,18 +94,5 @@
     </section>
     <footer>
     </footer>
-      {%- for group in groups %}
-        {%- for nft in group %}
-        <div id="modal-image-{{nft['id']}}" class="modal modal-fx-superScaled">
-          <div class="modal-background"></div>
-          <div class="modal-content is-image">
-            <img src="{{nft['url']}}" alt="{{ nft['name'] }}">
-          </div>
-          <button class="modal-close is-large" aria-label="close"></button>
-        </div>
-        {%- endfor %}
-      {%- endfor %}
-      <script src="https://unpkg.com/bulma-modal-fx/dist/js/modal-fx.min.js"></script>
-      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
   </body>
 </html>
