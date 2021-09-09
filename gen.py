@@ -83,11 +83,18 @@ def main():
     total = sum([int(nft["distribution"]) for nft in nfts])
     nfts = [add_scarcity(nft, total) for nft in nfts]
     nfts = sorted(nfts, key=lambda nft: int(nft["distribution"]))
+    group_names = [
+        "Ultra scarce",
+        "Scarce",
+        "Rare",
+        "Nice grab",
+        "It's family",
+    ]
     groups = [
         list(group)
-        for key, group in groupby(nfts, key=lambda nft: int(nft["distribution"]))
+        for _, group in groupby(nfts, key=lambda nft: int(nft["distribution"]))
     ]
-    result = template.render(groups=groups)
+    result = template.render(groups=list(zip(group_names, groups)))
     with open(PWD / "index.html", "w") as f:
         f.write(result)
 
